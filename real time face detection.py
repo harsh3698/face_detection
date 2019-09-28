@@ -7,8 +7,7 @@ Created on Fri Sep 27 12:48:38 2019
 
 import cv2
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-camera = cv2.VideoCapture(0)
-img_counter = 0
+camera = cv2.VideoCapture(0)   # 1 for external camera
 i = 0
 while True:
     ret, image = camera.read()
@@ -27,11 +26,11 @@ while True:
     cv2.imshow('FaceDetection', image)
     if k%256 == 27:
         break
-    elif 210<x<240 and 130<y<160 and 400<x+w<430 and 320<y+h<350:
+    elif 210<x<240 and 130<y<160 and 400<x+w<430 and 320<y+h<350: # It takes a single image if the face comes in the region
         if i == 1:
             break
         else:
-            ima = "{}.jpg".format(i)
+            ima = "{}.jpg".format(i)                # Image saved in directory
             cv2.imwrite(ima, image[y:y+h, x:x+w])
             img_counter += 1
             i+=1
