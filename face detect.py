@@ -28,7 +28,7 @@ while True:
     cv2.imshow('FaceDetection', image)
     if k%256 == 27:     #press esc to exit
         break
-    # Takes multiple images if the detected face come sin this cooerdinates
+    # Takes multiple images if the detected face comes in these coordinates
     elif 210<x<240 and 130<y<160 and 400<x+w<430 and 320<y+h<350:
         print(x, y, x+w, y+h)
         img_name = "facedetect_webcam_{}.jpg".format(img_counter)
