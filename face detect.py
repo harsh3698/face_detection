@@ -30,12 +30,12 @@ while True:
         break
     # Takes multiple images if the detected face comes in these coordinates
     elif 210<x<240 and 130<y<160 and 400<x+w<430 and 320<y+h<350:
-        print(x, y, x+w, y+h)
-        img_name = "facedetect_webcam_{}.jpg".format(img_counter)
-        cv2.imwrite(img_name, image)   # Saves the screenshot from the video
+        print(x, y, x+w, y+h)               # Prints coordinates of face
+        #img_name = "facedetect_webcam_{}.jpg".format(img_counter)
+        #cv2.imwrite(img_name, image)   
         ima = "{}.jpg".format(i)
         cv2.imwrite(ima, image[y:y+h, x:x+w])    # Saves region of face 
-        print("{} written!".format(img_name))
+        #print("{} written!".format(img_name))
         img_counter += 1
         i+=1
 camera.release()
