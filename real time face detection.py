@@ -20,7 +20,7 @@ while True:
             minSize = (30, 30),
             flags = cv2.CASCADE_SCALE_IMAGE
             )
-    # Assuming the resolution of camera is 640*480
+    # Assuming the resolution of the camera is 640*480
     cv2.rectangle(image, (200, 120), (440,360), (255, 255, 255), 2)
     for (x, y, w, h) in faces:
         cv2.rectangle(image, (x,y), (x+w, y+h), (255, 255, 255), 2)
